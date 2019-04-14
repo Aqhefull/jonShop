@@ -1,0 +1,50 @@
+.list-group 
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  width: 100%
+
+
+.list-group > *:first-child 
+  border-radius: 5px 5px 0 0
+
+
+.list-group > *:last-child 
+  border-radius: 0 0 5px 5px
+
+
+.list-group-item 
+  position: relative
+  list-style-type: none
+  border: 1px solid #EDEDED
+  display: inline-flex
+  padding: 10px 20px
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  cursor: pointer
+  &:hover
+    background-color: #90caf9
+
+.list-group-item-text
+  flex-grow: 1
+  padding-left: 10px
+  &:first-letter
+    text-transform: uppercase
+
+.list-group-item:not(:last-child) 
+  border-bottom: none
+
+
+.list-group-item.active 
+  background-color: #23C9FF
+  border: 1px solid #5EB2F2
+  color: #FFF
+
+
+.list-group-item.disabled 
+  opacity: .5
+  cursor: not-allowed
+
