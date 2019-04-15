@@ -148,15 +148,7 @@ if (!PRODUCTS || !PRODUCTS.products || !PRODUCTS.products.length) {
 }
 
 const products = (state = PRODUCTS, { name, count, type }) => {
-  console.log(state)
-  switch (type) {
-    case ADD_LISTCOUNT:
-      return [
-        ...state, {
-         name, 
-         count
-        }
-      ];
+  switch (type) {    
     default:
       return state;
   }
