@@ -18,6 +18,7 @@ const Input = ({ id, className, label, error, checkbox, ...attrs }) => {
         {attrs.required && <span className="inputRequired">Required</span>}
       </div>
       <input name={id} id={id} className={classes} {...attrs} />
+      {checkbox && <span className="check__box" />}
       {error && <span className="inputError">{error}</span>}
     </div>
   );

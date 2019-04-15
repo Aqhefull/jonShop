@@ -10,12 +10,6 @@
   cursor: not-allowed
 
 
-.input[name="checkbox"],
-.input[name="radio"] 
-  width: 40px
-  height: 40px
-  margin: 0 auto
-
 
 .input.error 
   border-color: #D43728
@@ -25,7 +19,7 @@
 .inputWrapper 
   display: flex
   flex-direction: column
-  justify-content: center
+  justify-content: flex-end
   position: relative
   &__
     &checkbox
@@ -36,6 +30,7 @@
         .inputLabel
           font-size: inherit
           font-weight: inherit
+          padding-left: 25px
 
 .labelsWrapper 
   margin-bottom: 5px
@@ -59,3 +54,43 @@
   color: #D43728
   font-size: 12px
 
+
+/* Check */
+
+.check 
+	padding-left: 1.2em
+
+.check__input
+  position: absolute
+  appearance: none
+  border: 0
+
+.check__box
+  position: absolute
+  width: 1em
+  height: 1em
+  overflow: hidden
+  border-radius: 0.05em
+  background-color: white
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  box-shadow: 0 0 0 0.1em #4A90E2
+	
+/* Checked */
+.check__input:checked + .check__box 
+	background-color: #4A90E2
+	background-image: url(https://cdn.glitch.com/d6162378-5823-4160-a555-3d9789bd2b92%2Fcheck.svg?1550563475518)
+		
+/* Focused */
+
+.check__input:focus + .check__box 
+	box-shadow: 0 0 0 0.1em #4A90E2, 0 0 0 0.2em #7ED321
+		
+/* Disabled */
+
+.check__input:disabled + .check__box 
+	box-shadow: 0 0 0 0.1em #9B9B9B
+		
+.check__input:checked:disabled + .check__box 
+	background-color: #9B9B9B
+		

@@ -30,7 +30,7 @@ class ListGroupFilter extends Component {
         <ListGroupItem key={i} onClick={() => switchFilter(sectionItem, itemSlug)} active={isActive}>
           {type === "color" && <Badge value="" color={sectionItem} circle />}
           {type !== "checkbox" && <span className="list-group-item-text">{sectionItem}</span>}
-          {type === "checkbox" &&  <Input id="checkbox" label={sectionItem} type="checkbox" checked={isActive ? 'checked' : null}/>}
+          {type === "checkbox" &&  <Input id="checkbox" className='check__input' label={sectionItem} type="checkbox" checkbox checked={isActive ? 'checked' : null}/>}
           <Badge value={info} inline />
         </ListGroupItem>
         ) : (
