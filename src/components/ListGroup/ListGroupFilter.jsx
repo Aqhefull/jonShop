@@ -34,7 +34,7 @@ class ListGroupFilter extends Component {
           <Badge value={info} inline />
         </ListGroupItem>
         ) : (
-          <Chip key={i} text={sectionItem} onChipClick={() => switchFilter(sectionItem, itemSlug)}/>
+          <Chip key={i} text={sectionItem} active={isActive} onChipClick={() => switchFilter(sectionItem, itemSlug)}/>
         )
     });
   }

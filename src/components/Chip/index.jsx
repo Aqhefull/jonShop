@@ -18,6 +18,7 @@ const Chip = ({
   className,
   onChipClick,
   onCloseClick,
+  active,
   id
 }) => {
   const onChipClickAction = () => {
@@ -29,7 +30,7 @@ const Chip = ({
     onCloseClick(e, id);
   };
 
-  const classes = classNames("chip", className);
+  const classes = classNames("chip", className, { active });
 
   return (
     <div className={classes} onClick={onChipClickAction}>
@@ -64,7 +65,8 @@ Chip.propTypes = {
   className: PropTypes.string,
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onChipClick: PropTypes.func,
-  onCloseClick: PropTypes.func
+  onCloseClick: PropTypes.func,
+  active: PropTypes.bool
 };
 
 Chip.defaultProps = {
@@ -76,6 +78,7 @@ Chip.defaultProps = {
   iconName: "user-tie",
   imageSrc: "",
   id: null,
+  active: false,
   onChipClick: () => {},
   onCloseClick: () => {}
 };
