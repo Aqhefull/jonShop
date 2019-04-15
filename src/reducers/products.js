@@ -1,5 +1,4 @@
 import { load } from 'redux-localstorage-simple';
-import { ADD_LISTCOUNT } from "../constants";
 
 let PRODUCTS = load({ namespace: 'product-list' });
 
@@ -147,8 +146,8 @@ if (!PRODUCTS || !PRODUCTS.products || !PRODUCTS.products.length) {
   }
 }
 
-const products = (state = PRODUCTS, { name, count, type }) => {
-  switch (type) {    
+const products = (state = PRODUCTS, { type }) => {
+  switch (type) {  
     default:
       return state;
   }
