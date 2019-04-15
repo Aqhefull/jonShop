@@ -8,7 +8,6 @@ const PRODUCT_FILTER = {
 };
 
 const filterProducts = (state = PRODUCT_FILTER, { type, payload, itemSlug }) => {
-  console.log(type, payload, itemSlug);
   switch (type) {
     case FILTER_PRODUCT:
       if (typeof state[itemSlug] === "object" || state[itemSlug] instanceof Array) {

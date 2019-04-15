@@ -12,15 +12,25 @@ import Chip from "../Chip";
 
 class ListGroupFilter extends Component {
   getSlugCounter = (data, itemSlug, sectionItem) => data.items.filter(item => item[itemSlug].includes(sectionItem)).length;
+  isActive = (filterProducts, itemSlug, sectionItem) => {
+    if(typeof filterProducts[itemSlug] === "object" || filterProducts[itemSlug] instanceof Array) {
+      return filterProducts[itemSlug].includes(sectionItem);
+    } else {
+      return filterProducts[itemSlug] === sectionItem
+    }
+  }
   render() {
-    const { data, section, itemSlug, switchFilter, type } = this.props;
+    const { data, section, itemSlug, switchFilter, type, filterProducts } = this.props;
+    
+
     return data[section].map((sectionItem, i) => {
       const info = this.getSlugCounter(data, itemSlug, sectionItem);
+      const isActive = this.isActive(filterProducts, itemSlug, sectionItem)
       return (type !== 'tags') ? (
-        <ListGroupItem key={i} onClick={() => switchFilter(sectionItem, itemSlug)}>
+        <ListGroupItem key={i} onClick={() => switchFilter(sectionItem, itemSlug)} active={isActive}>
           {type === "color" && <Badge value="" color={sectionItem} circle />}
           {type !== "checkbox" && <span className="list-group-item-text">{sectionItem}</span>}
-          {type === "checkbox" &&  <Input id="checkbox" label={sectionItem} onChange={() => {}} type="checkbox"/>}
+          {type === "checkbox" &&  <Input id="checkbox" label={sectionItem} type="checkbox" checked={isActive ? 'checked' : null}/>}
           <Badge value={info} inline />
         </ListGroupItem>
         ) : (
@@ -44,4 +54,6 @@ ListGroupFilter.defaultProps = {
   itemSlug: '',
   type: ''
 };
-export default connect(null, {switchFilter})(ListGroupFilter);
+export default connect(({ filterProducts }) => ({
+  filterProducts
+}), {switchFilter})(ListGroupFilter);

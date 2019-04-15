@@ -22,7 +22,6 @@ const ListGroupItem = ({
   if (attrs.href && Tag === 'li') {
     Tag = 'a';
   }
-
   return (
     <Tag className={classes} {...attrs}>
       {children}
