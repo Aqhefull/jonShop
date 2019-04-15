@@ -7,7 +7,6 @@ class Products extends Component {
 
   render() {
     const { products } = this.props;
-    console.log(this.props)
     const isProductsExist = products.items && products.items.length > 0;
     return (
       <div className="products-wrapper col-md-9">
