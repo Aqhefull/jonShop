@@ -5,9 +5,30 @@ import ProductItem from '../ProductItem';
 
 import './style.sass';
 
-const ProductList = ({ productList }) => (
+const filterList = (productList, filterProducts) => {
+  let tempArr = productList;
+  for (let key in filterProducts) {
+    if (filterProducts.hasOwnProperty(key)) {
+      tempArr = tempArr.filter((pl) => {
+        if(typeof filterProducts[key] === "object" || filterProducts[key] instanceof Array) {
+          if (pl[key].some(r => filterProducts[key].includes('all') || filterProducts[key].includes(r))) {
+            return pl;
+          }
+        }
+        if(typeof filterProducts[key] === "string" || filterProducts[key] instanceof String) {
+           if (filterProducts[key] === 'all' || filterProducts[key] === pl[key]){
+            return pl;
+          }
+        }
+      })
+    }
+  }
+  return tempArr;
+}
+
+const ProductList = ({ productList, filterProducts }) => (
   <ul className="product-list">
-    {productList.map(({ id, image, text, price }) => (
+    {filterList(productList, filterProducts).map(({ id, image, text, price }) => (
       <ProductItem id={id} key={id}>
         <img src={image} alt={text} />
         <div className="product-item__info">
@@ -24,11 +45,13 @@ const ProductList = ({ productList }) => (
 );
 
 ProductList.propTypes = {
-  productList: PropTypes.array
-}
+  productList: PropTypes.array,
+  filterProducts: PropTypes.object
+};
 
 ProductList.defaultProps = {
-  productList: []
-}
+  productList: [],
+  filterProducts: {}
+};
 
 export default ProductList;

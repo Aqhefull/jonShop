@@ -1,9 +1,9 @@
 import { FILTER_PRODUCT } from "../constants";
 const PRODUCT_FILTER = {
-  category: "all",
-  color: "all",
+  category: ["all"],
+  color: ["all"],
   size: ["all"],
-  vendor: ["all"],
+  vendor: "all",
   tags: ["all"]
 };
 

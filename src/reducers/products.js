@@ -7,7 +7,7 @@ if (!PRODUCTS || !PRODUCTS.products || !PRODUCTS.products.length) {
     colors: ['red', 'blue', 'white', 'orange', 'green', 'yellow', 'pink', 'black' ],
     sizes: ['S', 'M', 'XL', 'XXL'],
     vendors: ['Malcon', 'Papa', 'Rocco', 'JIM', 'Rozetka'],
-    tags: ['DC', 'Marvel', 'America', 'Venom', 'Spartan', 'Coneth', 'Thor', 'Marvel', 'Orlov', 'Claus', 'Spider', 'Stan', 'Evil', 'Ash', 'woman'], 
+    tags: ['DC', 'America', 'Venom', 'Spartan', 'Coneth', 'Thor', 'Marvel', 'Orlov', 'Claus', 'Spider', 'Stan', 'Evil', 'Ash', 'woman'], 
     categories: ['Marvel', 'Zheka Inc', 'DC'],
     items: [
       {
