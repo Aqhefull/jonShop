@@ -1,5 +1,15 @@
 .product-list
   display: flex
-  justify-content: center
+  justify-content: flex-start
   align-items: stretch
   flex-wrap: wrap
+.fadelist-enter 
+  opacity: 0
+.fadelist-enter-active 
+  opacity: 1
+  transition: opacity 500ms
+.fadelist-exit 
+  opacity: 1
+.fadelist-exit-active 
+  opacity: 0
+  transition: opacity 500ms

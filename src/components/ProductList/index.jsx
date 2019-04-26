@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ProductItem from '../ProductItem';
 
 import './style.sass';
@@ -27,21 +27,29 @@ const filterList = (productList, filterProducts) => {
 }
 
 const ProductList = ({ productList, filterProducts }) => (
-  <ul className="product-list">
-    {filterList(productList, filterProducts).map(({ id, image, text, price }) => (
-      <ProductItem id={id} key={id}>
-        <img src={image} alt={text} />
-        <div className="product-item__info">
-          <div className="product-item__title">
-            <span>{text}</span>
-          </div>
-          <div className="product-item__price">
-            <span>{price}$</span>
-          </div>
-        </div>
-      </ProductItem>
-    ))}
-  </ul>
+    <TransitionGroup className="product-list">
+        {filterList(productList, filterProducts).map(
+          ({ id, image, text, price }) => (
+            <CSSTransition
+                key={id}
+                timeout={500}
+                classNames="fadelist"
+              >
+              <ProductItem id={id}>
+                <img src={image} alt={text} />
+                <div className="product-item__info">
+                  <div className="product-item__title">
+                    <span>{text}</span>
+                  </div>
+                  <div className="product-item__price">
+                    <span>{price}$</span>
+                  </div>
+                </div>
+              </ProductItem>
+            </CSSTransition>
+          )
+        )}
+    </TransitionGroup>
 );
 
 ProductList.propTypes = {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+
 import './style.sass';
 
 const ProductItem = ({
@@ -14,9 +15,9 @@ const ProductItem = ({
     className,
   );
   return (
-    <li className={classes} {...attrs}>
+    <div className={classes} {...attrs}>
       {children}
-    </li>
+    </div>
   );
 };
 
