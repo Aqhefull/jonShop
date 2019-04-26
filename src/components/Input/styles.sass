@@ -77,8 +77,8 @@
   box-shadow: 0 0 0 0.1em #4A90E2
 	
 /* Checked */
-.check__input:checked + .check__box 
-	background-color: #4A90E2
+.check__box.checked
+	background-color: #4A90E2;
 	background-image: url(https://cdn.glitch.com/d6162378-5823-4160-a555-3d9789bd2b92%2Fcheck.svg?1550563475518)
 		
 /* Focused */
@@ -91,6 +91,6 @@
 .check__input:disabled + .check__box 
 	box-shadow: 0 0 0 0.1em #9B9B9B
 		
-.check__input:checked:disabled + .check__box 
+.check__input.checked:disabled + .check__box 
 	background-color: #9B9B9B
 		

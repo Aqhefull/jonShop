@@ -4,8 +4,9 @@ import classNames from "classnames";
 
 import "./styles.sass";
 
-const Input = ({ id, className, label, error, checkbox, ...attrs }) => {
+const Input = ({ id, className, label, error, checkbox, defaultChecked, ...attrs }) => {
   const classes = classNames("input", className, { error });
+  const isCheckClass = classNames("check__box", (defaultChecked) ? 'checked' : '');
   const inputWrapper = classNames("inputWrapper", (attrs.type === 'checkbox') ? 'inputWrapper__checkbox' : null);
   return (
     <div className={inputWrapper}>
@@ -18,7 +19,7 @@ const Input = ({ id, className, label, error, checkbox, ...attrs }) => {
         {attrs.required && <span className="inputRequired">Required</span>}
       </div>
       <input name={id} id={id} className={classes} {...attrs} />
-      {checkbox && <span className="check__box" />}
+      {checkbox && <span className={isCheckClass} />}
       {error && <span className="inputError">{error}</span>}
     </div>
   );
