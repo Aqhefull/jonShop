@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProductList from '../components/ProductList'
+import ProductsTopBar from '../components/ProductsTopBar';
+import ProductList from '../components/ProductList';
+
 class Products extends Component {
 
   state = {}
@@ -11,7 +13,13 @@ class Products extends Component {
     return (
       <div className="products-wrapper col-md-9">
         {isProductsExist && (
-          <ProductList productList={products.items} filterProducts={filterProducts}/>
+          <React.Fragment>
+            <ProductsTopBar />
+            <ProductList
+              productList={products.items}
+              filterProducts={filterProducts}
+            />
+          </React.Fragment>
         )}
       </div>
     );
