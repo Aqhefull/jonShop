@@ -5,6 +5,10 @@ import arrow from './arrow.svg'
 import arrowWhite from "./arrow-white.svg";
 import "./style.sass";
 
+/*
+  React Select by Alexander Komarevich
+  ver 1.0.0
+*/
 
 export default class Select extends Component {
   constructor(props) {
