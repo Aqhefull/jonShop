@@ -1,23 +1,18 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import './style.sass'
-import Select from '../Select';
+import Select, { SelectOption } from '../Select';
 
-export default class ProductsTopBar extends Component {
-  state = {
-    selectOpen: false
-  }
-  setSelect() {
-    this.setState({
-      selectOpen: !this.state.selectOpen
-    })
-    console.log(this.state)
-  }
- render() {
+const ProductsTopBar = () => {
   return (
     <div className="products-top-bar">
-      <Select onSelectClick={() => this.setSelect()} open={this.state.selectOpen}/>
+      <Select id="sortBy">
+        <SelectOption name="New" />
+        <SelectOption name="Price UP" />
+        <SelectOption name="Price Down" />
+      </Select>
     </div>
   );
- }
 };
+
+export default ProductsTopBar;

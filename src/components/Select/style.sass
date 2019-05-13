@@ -1,4 +1,33 @@
 .Select
-  background-color: red
-  width: 30px
+  background-color: #fff
+  border: 2px solid #000
+  border-radius: 5px
+  padding: 10px 5px 10px 10px
+  width: auto
   height: 30px
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  position: relative
+  &-
+    &open
+      border: 2px solid #544580
+      background-color: #544580
+      color: #fff
+    &indicators
+      padding-left: 6px
+    &options
+      border: 2px solid #000
+      color: #000
+      width: 100%
+      top: 100%
+      left: 0
+      position: absolute
+      margin-top: 5px
+      background-color: #ededed
+      .Select-option
+        padding: 10px 10px 10px 10px
+        &:hover
+          background-color: #5e9eca
+          color: #fff
