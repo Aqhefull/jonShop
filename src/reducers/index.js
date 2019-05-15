@@ -1,9 +1,15 @@
 import { combineReducers } from 'redux';
-import products from './products.js';
-import filterProducts from "./filterProducts.js";
-import sortProducts from "./sortProducts.js";
+import products from './products';
+import filterProducts from "./filterProducts";
+import sortProducts from "./sortProducts";
+import filteredProducts from "./filteredProducts";
 
 
-const rootReducer = combineReducers({ products, filterProducts, sortProducts });
+const rootReducer = combineReducers({
+  products,
+  filterProducts,
+  sortProducts,
+  filteredProducts
+});
 
 export default rootReducer;

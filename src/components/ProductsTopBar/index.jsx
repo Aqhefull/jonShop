@@ -4,7 +4,7 @@ import './style.sass'
 import Select, { SelectOption } from '../Select';
 import { switchSortProducts } from "../../actions/actionCreator";
 
-const ProductsTopBar = ({ switchSortProducts }) => {
+const ProductsTopBar = ({ switchSortProducts, filteredProducts }) => {
   return (
     <div className="products-top-bar">
       <div className="products-top-bar__sort">
@@ -15,11 +15,14 @@ const ProductsTopBar = ({ switchSortProducts }) => {
           <SelectOption name="Price Down" />
         </Select>
       </div>
+      <div className="products-top-bar__found">
+        <label>Products found: {filteredProducts.length}</label>
+      </div>
     </div>
   );
 };
 
 export default connect(
-  null,
+  ({ filteredProducts }) => ({ filteredProducts }),
   { switchSortProducts }
 )(ProductsTopBar);

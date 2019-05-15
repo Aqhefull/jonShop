@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ProductItem from '../ProductItem';
+import { getFilteredProducts } from "../../actions/actionCreator";
 
 import './style.sass';
 
@@ -25,8 +27,8 @@ const filterList = (productList, filterProducts) => {
   }
   return tempArr;
 }
-const sortList = (list, sortBy) => {
-  console.log(list)
+const sortList = (list, sortBy, getFilteredProducts) => {
+  getFilteredProducts(list);
   switch (sortBy) {
     case "new":
       return list;
@@ -53,10 +55,10 @@ const sortList = (list, sortBy) => {
     default:
       return list;
   }
-}
-const ProductList = ({ productList, filterProducts, sortBy }) => (
+};
+const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts }) => (
     <TransitionGroup className="product-list">
-        {sortList(filterList(productList, filterProducts), sortBy).map(
+        {sortList(filterList(productList, filterProducts), sortBy, getFilteredProducts).map(
           ({ id, image, text, price }) => (
             <CSSTransition
                 key={id}
@@ -89,5 +91,7 @@ ProductList.defaultProps = {
   productList: [],
   filterProducts: {}
 };
-
-export default ProductList;
+export default connect(
+  ({ getFilteredProducts }) => ({ getFilteredProducts }),
+  { getFilteredProducts }
+)(ProductList);
