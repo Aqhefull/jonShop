@@ -25,10 +25,38 @@ const filterList = (productList, filterProducts) => {
   }
   return tempArr;
 }
-
-const ProductList = ({ productList, filterProducts }) => (
+const sortList = (list, sortBy) => {
+  console.log(list)
+  switch (sortBy) {
+    case "new":
+      return list;
+    case "price_up":
+      return list.sort(function(a, b) {
+        if (a.price > b.price) {
+          return 1;
+        }
+        if (a.price < b.price) {
+          return -1;
+        }
+        return 0;
+      });
+    case "price_down":
+      return list.sort(function(a, b) {
+        if (a.price > b.price) {
+          return -1;
+        }
+        if (a.price < b.price) {
+          return 1;
+        }
+        return 0;
+      });
+    default:
+      return list;
+  }
+}
+const ProductList = ({ productList, filterProducts, sortBy }) => (
     <TransitionGroup className="product-list">
-        {filterList(productList, filterProducts).map(
+        {sortList(filterList(productList, filterProducts), sortBy).map(
           ({ id, image, text, price }) => (
             <CSSTransition
                 key={id}

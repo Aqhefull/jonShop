@@ -8,7 +8,7 @@ class Products extends Component {
   state = {}
 
   render() {
-    const { products, filterProducts } = this.props;
+    const { products, filterProducts, sortProducts } = this.props;
     const isProductsExist = products.items && products.items.length > 0;
     return (
       <div className="products-wrapper col-md-9">
@@ -18,6 +18,7 @@ class Products extends Component {
             <ProductList
               productList={products.items}
               filterProducts={filterProducts}
+              sortBy={sortProducts}
             />
           </React.Fragment>
         )}
@@ -27,7 +28,8 @@ class Products extends Component {
 }
 
 
-export default connect(({ products, filterProducts }) => ({
+export default connect(({ products, filterProducts, sortProducts }) => ({
   products,
-  filterProducts
+  filterProducts,
+  sortProducts
 }))(Products);

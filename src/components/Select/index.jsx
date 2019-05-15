@@ -19,6 +19,7 @@ export default class Select extends Component {
       selectedName: '',
       options: []
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
   setSelect() {
     this.setState({
@@ -29,7 +30,7 @@ export default class Select extends Component {
     this.setState({
       selected: child,
       selectedName: child.props.name
-    });
+    }, this.handleInputChange);
   }
   componentDidMount(){
     const { children } = this.props
@@ -40,6 +41,10 @@ export default class Select extends Component {
     this.setState({
       options: childrenWithProps
     });
+  }
+  handleInputChange() {
+    const value = this.selectInput.value;
+    this.props.onSelectChange(value);
   }
   render() {
     const { selected, selectedName, options } = this.state;
@@ -54,7 +59,7 @@ export default class Select extends Component {
           <img src={!this.state.open ? arrow : arrowWhite} alt="Select"/>
         </div>
         <div className="Select-input">
-          <input name={id} type="hidden" value={(selected === '' && options[0]) ? options[0].props.name.toLowerCase().replace(' ', '_') : selectedName.toLowerCase().replace(' ', '_')}/>
+          <input ref={(ref) => this.selectInput = ref} name={id} type="hidden" value={(selected === '' && options[0]) ? options[0].props.name.toLowerCase().replace(' ', '_') : selectedName.toLowerCase().replace(' ', '_')}/>
         </div>
         { 
           this.state.open && 
@@ -73,9 +78,11 @@ export const SelectOption = ({name, setSelected}) => {
 }
 
 Select.propTypes = {
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  onSelectChange: PropTypes.func
 };
 
 Select.defaultProps = {
-  id: null
+  id: null,
+  onSelectChange: () => {}
 };
