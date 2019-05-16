@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
+import { Link } from "react-router-dom";
 
 import './style.sass';
 
 const ProductItem = ({
   children,
   className,
+  linkText,
   ...attrs
 }) => {
   const classes = classNames(
     'product-item',
     className,
   );
+  const linkName = linkText.toLowerCase().replace(/ /g, "_");
   return (
-    <div className={classes} {...attrs}>
+    <Link to={`/product/${linkName}`} className={classes} {...attrs}>
       {children}
-    </div>
+    </Link>
   );
 };
 

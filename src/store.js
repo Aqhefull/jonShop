@@ -1,6 +1,10 @@
+import { createBrowserHistory } from "history";
 import { createStore, compose, applyMiddleware } from 'redux';
-import rootReducer from './reducers/index';
+import { routerMiddleware } from "connected-react-router";
+import createRootReducer from "./reducers";
 import { save } from 'redux-localstorage-simple'
+
+export const history = createBrowserHistory();
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers =
@@ -12,10 +16,10 @@ const composeEnhancers =
 
 const configureStore = preloadedState => (
   createStore(
-    rootReducer,
+    createRootReducer(history),
     preloadedState,
     composeEnhancers(
-      applyMiddleware(save({ namespace: 'todo-list' }))
+      applyMiddleware(save({ namespace: 'todo-list' }), routerMiddleware(history))
     ),
   )
 );
