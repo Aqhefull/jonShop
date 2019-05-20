@@ -8,16 +8,15 @@ import './style.sass';
 const ProductItem = ({
   children,
   className,
-  linkText,
+  id,
   ...attrs
 }) => {
   const classes = classNames(
     'product-item',
     className,
   );
-  const linkName = linkText.toLowerCase().replace(/ /g, "_");
   return (
-    <Link to={`/product/${linkName}`} className={classes} {...attrs}>
+    <Link to={`/product/${id}`} className={classes} {...attrs}>
       {children}
     </Link>
   );

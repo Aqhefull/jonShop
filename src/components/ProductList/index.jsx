@@ -65,7 +65,7 @@ const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts 
                 timeout={500}
                 classNames="fadelist"
               >
-              <ProductItem id={id} linkText={text}>
+              <ProductItem id={id}>
                 <img src={image} alt={text} />
                 <div className="product-item__info">
                   <div className="product-item__title">

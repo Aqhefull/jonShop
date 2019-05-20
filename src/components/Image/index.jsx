@@ -21,8 +21,6 @@ const Image = ({
       src={src}
       alt={alt}
       className={classes}
-      width={width}
-      height={height}
       {...attrs}
     />
   );
@@ -40,8 +38,6 @@ Image.propTypes = {
 Image.defaultProps = {
   src: '',
   alt: 'image',
-  width: 100,
-  height: 100,
   circle: false,
   className: '',
 };
