@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ProductItem from '../ProductItem';
-import { getFilteredProducts } from "../../actions/actionCreator";
+import Button from './../Button'
+import CartIcon from "../../img/cart.svg";
+import NotCheckIcon from "../../img/off.svg";
+import { Link } from "react-router-dom";
+
+import { getFilteredProducts, addToCart } from "../../actions/actionCreator";
 
 import './style.sass';
 
@@ -56,7 +61,7 @@ const sortList = (list, sortBy, getFilteredProducts) => {
       return list;
   }
 };
-const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts }) => (
+const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts, inCart, addToCart }) => (
     <TransitionGroup className="product-list">
         {sortList(filterList(productList, filterProducts), sortBy, getFilteredProducts).map(
           ({ id, image, text, price }) => (
@@ -66,13 +71,24 @@ const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts 
                 classNames="fadelist"
               >
               <ProductItem id={id}>
-                <img src={image} alt={text} />
-                <div className="product-item__info">
-                  <div className="product-item__title">
-                    <span>{text}</span>
+                <div className="product-item__top">
+                  <Link to={`/product/${id}`}>
+                    <img src={image} alt={text} />
+                  </Link>
+                </div>
+                <div className="product-item__bottom">
+                  <div className="product-item__info">
+                    <div className="product-item__title">
+                      <Link to={`/product/${id}`}>
+                        <span>{text}</span>
+                      </Link>
+                    </div>
+                    <div className="product-item__price">
+                      <span>{price}$</span>
+                    </div>
                   </div>
-                  <div className="product-item__price">
-                    <span>{price}$</span>
+                  <div className="product-item__cart">
+                    <Button color={(inCart.includes(id)) ? 'green' : '' } value={(inCart.includes(id)) ? 'In Cart' : 'Buy now!'} buttonClick={() => addToCart(id)} image={(!inCart.includes(id)) ? CartIcon : NotCheckIcon}/>
                   </div>
                 </div>
               </ProductItem>
@@ -92,6 +108,6 @@ ProductList.defaultProps = {
   filterProducts: {}
 };
 export default connect(
-  ({ getFilteredProducts }) => ({ getFilteredProducts }),
-  { getFilteredProducts }
+  ({ getFilteredProducts, inCart }) => ({ getFilteredProducts, inCart }),
+  { getFilteredProducts, addToCart }
 )(ProductList);

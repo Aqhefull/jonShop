@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from "react-router-dom";
 
 import './style.sass';
 
@@ -16,9 +15,9 @@ const ProductItem = ({
     className,
   );
   return (
-    <Link to={`/product/${id}`} className={classes} {...attrs}>
+    <div className={classes} {...attrs}>
       {children}
-    </Link>
+    </div>
   );
 };
 

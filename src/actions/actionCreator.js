@@ -1,4 +1,9 @@
-import { FILTER_PRODUCT, SORT_PRODUCT, FILTERED_PRODUCTS } from "../constants";
+import {
+  UPDATE_CART,
+  SORT_PRODUCT,
+  FILTERED_PRODUCTS,
+  FILTER_PRODUCT
+} from "../constants";
 
 export const switchFilter = (name, itemSlug) => ({
   type: FILTER_PRODUCT,
@@ -15,4 +20,9 @@ export const switchSortProducts = (sortBy) => ({
 export const getFilteredProducts = (prodArr) => ({
   type: FILTERED_PRODUCTS,
   prodArr
+});
+
+export const addToCart = (id) => ({
+  type: UPDATE_CART,
+  id
 });

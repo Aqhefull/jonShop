@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import Image from '../Image';
 import Badge from '../Badge';
 import Button from '../Button';
+import { addToCart } from '../../actions/actionCreator'
+import CartIcon from "../../img/cart.svg";
+import NotCheckIcon from "../../img/off.svg";
 
-const SingleProduct = ({ products, match }) => {
+const SingleProduct = ({ products, match, addToCart, inCart }) => {
   const { id: productID } = match.params;
   const { items } = products;
   const currentProduct = items.find(el => el.id === Number(productID));
@@ -34,7 +37,7 @@ const SingleProduct = ({ products, match }) => {
               </ul>
             </div>
             <div className="single-product__addtocart">
-              <Button value="Buy now!"/>
+              <Button value={(inCart.includes(productID)) ? 'In Cart' : 'Buy now!'} buttonClick={() => addToCart(productID)} image={(!inCart.includes(productID)) ? CartIcon : NotCheckIcon}/>
             </div>
           </div>
           <div className="single-product__right-bottom">
@@ -48,7 +51,8 @@ const SingleProduct = ({ products, match }) => {
   );
 };
 
-export default connect(({ products, router }) => ({
+export default connect(({ products, router, inCart }) => ({
   products,
-  router
-}))(SingleProduct);
+  router,
+  inCart
+}), ({addToCart}))(SingleProduct);

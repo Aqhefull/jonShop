@@ -1,0 +1,76 @@
+.Cart
+  background-color: #1e88e5
+  padding: 20px
+  display: inline-block
+  position: relative
+  cursor: pointer
+  &:hover
+    background-color: #1565c0
+  &__
+    &container
+      display: flex
+      justify-content: center
+      align-items: center
+    &dropdown
+      position: absolute
+      right: 0
+      top: 100%
+      padding: 20px
+      background-color: #fff
+      z-index: 999
+      min-width: 400px
+      ul
+        overflow-y: scroll
+        margin-right: -20px
+        padding-right: 6px
+        max-height: 200px
+    &icon
+      padding-left: 10px
+  &-
+    &text
+      display: flex
+      justify-content: center
+      align-items: center
+      &__
+        &info, &count
+          color: #fff
+          font-weight: 700
+        &count
+          font-size: 18px
+          padding-left: 20px
+    &total
+      display: flex
+      justify-content: space-between
+      align-items: center
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 18px
+      padding-top: 20px
+    &product
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 10px
+      padding-bottom: 10px
+      position: relative
+      &:after
+        content: ''
+        width: 80%
+        position: absolute
+        height: 2px
+        background-color: #e8e8e8
+        transform: translateX(-50%)
+        left: 50%
+        bottom: 0
+      &__
+        &image
+          width: 40px
+          height: 40px
+          object-fit: cover
+        &title, &price
+          font-weight: 700
+        &title
+          flex-grow: 2
+          padding-left: 10px
+        &price
+          color: #1e88e5
