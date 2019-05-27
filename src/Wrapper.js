@@ -1,7 +1,7 @@
 import React from "react";
 import Products from "./containers/Products";
 import Sidebar from "./containers/Sidebar";
-import { NavBar } from "./components/NavBar";
+import NavBar from "./components/NavBar";
 
 const Wrapper = () => (
   <div className="main-wrapper">

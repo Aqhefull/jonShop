@@ -2,6 +2,8 @@ import React from "react";
 import "./styles.sass";
 import Cart from "../Cart";
 
-export const NavBar = () => {
+const NavBar = () => {
   return <nav className="NavBar"><Cart/></nav>;
 };
+
+export default NavBar 
