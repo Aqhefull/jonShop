@@ -5,7 +5,12 @@ const inCart = (state = [], { type, id }) => {
     case UPDATE_CART:
       //in future fix if you want to increment your prod cart num
       let newState = [...state]
-      return !newState.includes(id) ? [...newState, id] : newState.splice(id, 1);
+      if(!newState.includes(id)) {
+        return [...newState, id]
+      } else {
+        newState.splice(newState.indexOf(id), 1)
+        return newState
+      }
     default:
       return state;
   }
