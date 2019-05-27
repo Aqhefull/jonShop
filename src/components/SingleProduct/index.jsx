@@ -57,7 +57,7 @@ const SingleProduct = ({ products, match, addToCart, inCart }) => {
                     <span>Vendor: </span><strong>{currentProduct.vendor}</strong>
                   </div>
                   <div className="single-product-row">
-                    <span>Colors: </span><div className="single-product-colors">{currentProduct.color.map((color, i) => <Badge value="" color={color} circle />)}</div>
+                    <span>Colors: </span><div className="single-product-colors">{currentProduct.color.map((color, i) => <Badge key={i} value="" color={color} circle />)}</div>
                   </div>
                 </div>
                 <hr/>
