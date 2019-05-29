@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from "connected-react-router";
 import store, { history } from "./store";
+import CartPage from './components/CartPage';
 
 ReactDOM.render((
   <Provider store={store}>
@@ -14,6 +15,7 @@ ReactDOM.render((
         <Switch>
           <Route exact path="/" component={Wrapper} />
           <Route path="/product/:id" component={SingleProduct} />
+          <Route path="/cart" component={CartPage} />
           <Route render={() => (<div>Miss</div>)} />
         </Switch>
     </ConnectedRouter>

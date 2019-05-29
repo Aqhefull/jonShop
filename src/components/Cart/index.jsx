@@ -3,6 +3,7 @@ import './styles.sass'
 import { connect } from "react-redux";
 import CartIcon from './../../img/cart.svg'
 import Image from '../Image';
+import Button from "../Button";
 import { Link } from "react-router-dom";
 
 class Cart extends Component {
@@ -55,9 +56,17 @@ class Cart extends Component {
             }
           </ul>
           {
-            (itemsInCart.length > 0) && <div className="Cart-total">
-              <span>Total: </span><span>{totalPrice}$</span>
-            </div>
+            (itemsInCart.length > 0) && 
+            <>
+              <div className="Cart-total">
+                <span>Total: </span><span>{totalPrice}$</span>
+              </div>
+              <hr/>
+              <div className="Cart-actions">
+                <Link to='/cart'><Button value='View Cart'/></Link>
+                <Button value='Checkout'/>
+              </div>
+            </>
           }
           </div>}
           

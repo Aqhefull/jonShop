@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './styles.sass';
 
 const Image = ({
-  src, alt, className, width, height, circle, ...attrs
+  src, alt, className, width, height, circle, imageClick, ...attrs
 }) => {
   const classes = classNames(
     className,
@@ -32,14 +32,14 @@ Image.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   circle: PropTypes.bool,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 Image.defaultProps = {
   src: '',
   alt: 'image',
   circle: false,
-  className: '',
+  className: ''
 };
 
 export default Image;

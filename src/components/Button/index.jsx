@@ -43,7 +43,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  image: {},
+  image: false,
   className: "",
   value: null,
   disabled: false,
