@@ -21,12 +21,13 @@ const filterList = (productList, filterProducts) => {
           if (pl[key].some(r => filterProducts[key].includes('all') || filterProducts[key].includes(r))) {
             return pl;
           }
-        }
+        } 
         if(typeof filterProducts[key] === "string" || filterProducts[key] instanceof String) {
            if (filterProducts[key] === 'all' || filterProducts[key] === pl[key]){
             return pl;
           }
         }
+        return false
       })
     }
   }
