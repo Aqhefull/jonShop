@@ -2,7 +2,8 @@ import {
   UPDATE_CART,
   SORT_PRODUCT,
   FILTERED_PRODUCTS,
-  FILTER_PRODUCT
+  FILTER_PRODUCT,
+  SEARCH_UPDATE
 } from "../constants";
 
 export const switchFilter = (name, itemSlug) => ({
@@ -25,4 +26,9 @@ export const getFilteredProducts = (prodArr) => ({
 export const addToCart = (id) => ({
   type: UPDATE_CART,
   id
+});
+
+export const searchByPhrase = (searchPhrase) => ({
+  type: SEARCH_UPDATE,
+  searchPhrase
 });

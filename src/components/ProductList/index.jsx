@@ -33,13 +33,16 @@ const filterList = (productList, filterProducts) => {
   }
   return tempArr;
 }
-const sortList = (list, sortBy, getFilteredProducts) => {
+const sortByPhrase = (list, searchProduct) => list.filter(({text}) => {
+    return text.toUpperCase().indexOf(searchProduct.toUpperCase()) > -1;
+  });
+const sortList = (list, sortBy, getFilteredProducts, searchProduct) => {
   getFilteredProducts(list);
   switch (sortBy) {
     case "new":
-      return list;
+      return sortByPhrase(list, searchProduct);
     case "price_up":
-      return list.sort(function(a, b) {
+      return sortByPhrase(list, searchProduct).sort(function(a, b) {
         if (a.price > b.price) {
           return 1;
         }
@@ -49,7 +52,7 @@ const sortList = (list, sortBy, getFilteredProducts) => {
         return 0;
       });
     case "price_down":
-      return list.sort(function(a, b) {
+      return sortByPhrase(list, searchProduct).sort(function(a, b) {
         if (a.price > b.price) {
           return -1;
         }
@@ -59,12 +62,12 @@ const sortList = (list, sortBy, getFilteredProducts) => {
         return 0;
       });
     default:
-      return list;
+      return sortByPhrase(list, searchProduct);
   }
 };
-const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts, inCart, addToCart }) => (
+const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts, inCart, addToCart, searchProduct }) => (
     <TransitionGroup className="product-list">
-        {sortList(filterList(productList, filterProducts), sortBy, getFilteredProducts).map(
+        {sortList(filterList(productList, filterProducts), sortBy, getFilteredProducts, searchProduct).map(
           ({ id, image, text, price }) => (
             <CSSTransition
                 key={id}
@@ -109,6 +112,10 @@ ProductList.defaultProps = {
   filterProducts: {}
 };
 export default connect(
-  ({ getFilteredProducts, inCart }) => ({ getFilteredProducts, inCart }),
+  ({ getFilteredProducts, inCart, searchProduct }) => ({
+    getFilteredProducts,
+    inCart,
+    searchProduct
+  }),
   { getFilteredProducts, addToCart }
 )(ProductList);

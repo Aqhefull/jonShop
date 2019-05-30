@@ -5,6 +5,7 @@ import filterProducts from "./filterProducts";
 import sortProducts from "./sortProducts";
 import filteredProducts from "./filteredProducts";
 import inCart from './cart'
+import searchProduct from "./searchProduct";
 
 export default history =>
   combineReducers({
@@ -13,5 +14,6 @@ export default history =>
     filterProducts,
     sortProducts,
     filteredProducts,
-    inCart
+    inCart,
+    searchProduct
   });

@@ -13,7 +13,6 @@ import CartIcon from "../../img/cart.svg";
 import NotCheckIcon from "../../img/off.svg";
 
 const SingleProduct = ({ products, match, addToCart, inCart }) => {
-  console.log(inCart)
   const { id: productID } = match.params;
   const { items } = products;
   const currentProduct = items.find(el => el.id === Number(productID));
