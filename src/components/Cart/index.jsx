@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import './styles.sass'
 import { connect } from "react-redux";
 import CartIcon from './../../img/cart.svg'
+import removeImg from "./../../img/off.svg";
 import Image from '../Image';
 import Button from "../Button";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../actions/actionCreator";
 
 class Cart extends Component {
   state = {
@@ -17,7 +19,7 @@ class Cart extends Component {
   }
 
   render() {
-    const {inCart, items} = this.props
+    const { inCart, items, addToCart } = this.props;
     const { cartOpen } = this.state;
     const itemsInCart = items.filter((item) => inCart.includes(item.id))
     const totalPrice = itemsInCart.reduce(
@@ -42,6 +44,12 @@ class Cart extends Component {
             {
               (itemsInCart.length > 0) && itemsInCart.map((el) => (
                 <li className="Cart-product" key={el.id}>
+                  <Image
+                    src={removeImg}
+                    alt="Remove"
+                    className="remove-img"
+                    onClick={() => addToCart(el.id)}
+                  />
                   <Image
                     className="Cart-product__image"
                     src={el.image}
@@ -75,6 +83,10 @@ class Cart extends Component {
   }
 };
 
-export default connect(({inCart, products: {items}}) => ({
-  inCart, items
-}))(Cart);
+export default connect(
+  ({ inCart, products: { items } }) => ({
+    inCart,
+    items
+  }),
+  { addToCart }
+)(Cart);
