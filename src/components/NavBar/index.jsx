@@ -6,9 +6,9 @@ import Logo from "../Logo";
 
 const NavBar = () => (
   <nav className="NavBar">
-      <div class="col-md-3"><Logo /></div>
-      <div class="col-md-6"><SearchPhrase /></div>
-      <div class="col-md-3"><Cart /></div>
+      <div className="col-md-3"><Logo /></div>
+      <div className="col-md-6"><SearchPhrase /></div>
+      <div className="col-md-3"><Cart /></div>
   </nav>
 );
 

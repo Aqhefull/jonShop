@@ -4,12 +4,16 @@ import classNames from "classnames";
 
 import "./styles.sass";
 
-const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, ...attrs }) => {
-  console.log('jjj:', value)
+const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, inputPress, ...attrs }) => {
   const [inputValue, setInputValue] = useState(value || '');
   const updateInputValue = (e) => {
     getInputValue(e.target.value);
     return setInputValue(e.target.value);
+  }
+  const handleKeyPress = (e) => {
+    if(e.key === 'Enter'){
+      inputPress()
+    }
   }
   const classes = classNames("input", className, { error });
   const isCheckClass = classNames("check__box", (defaultChecked) ? 'checked' : '');
@@ -31,6 +35,7 @@ const Input = ({ id, className, value, label, error, checkbox, defaultChecked, p
         placeholder={placeholder}
         className={classes}
         onChange={updateInputValue}
+        onKeyPress={handleKeyPress}
         {...attrs}
       />
       {checkbox && <span className={isCheckClass} />}
