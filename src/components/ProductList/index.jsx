@@ -37,12 +37,13 @@ const sortByPhrase = (list, searchProduct) => list.filter(({text}) => {
     return text.toUpperCase().indexOf(searchProduct.toUpperCase()) > -1;
   });
 const sortList = (list, sortBy, getFilteredProducts, searchProduct) => {
-  getFilteredProducts(list);
+  const filteredList = sortByPhrase(list, searchProduct);
+  getFilteredProducts(filteredList);
   switch (sortBy) {
     case "new":
-      return sortByPhrase(list, searchProduct);
+      return filteredList;
     case "price_up":
-      return sortByPhrase(list, searchProduct).sort(function(a, b) {
+      return filteredList.sort(function(a, b) {
         if (a.price > b.price) {
           return 1;
         }
@@ -52,7 +53,7 @@ const sortList = (list, sortBy, getFilteredProducts, searchProduct) => {
         return 0;
       });
     case "price_down":
-      return sortByPhrase(list, searchProduct).sort(function(a, b) {
+      return filteredList.sort(function(a, b) {
         if (a.price > b.price) {
           return -1;
         }
@@ -62,7 +63,7 @@ const sortList = (list, sortBy, getFilteredProducts, searchProduct) => {
         return 0;
       });
     default:
-      return sortByPhrase(list, searchProduct);
+      return filteredList;
   }
 };
 const ProductList = ({ productList, filterProducts, sortBy, getFilteredProducts, inCart, addToCart, searchProduct }) => (
