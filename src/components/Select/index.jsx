@@ -48,9 +48,18 @@ export default class Select extends Component {
   }
   render() {
     const { selected, selectedName, options } = this.state;
-    const { id } = this.props;
-    const selectWrap = classNames("Select", `Select-${ this.state.open ? 'open' : 'close' }`);
+    const { id, className, label, required } = this.props;
+    const selectWrap = classNames("Select", className, `Select-${ this.state.open ? 'open' : 'close' }`);
     return (
+      <>
+      <div className="labelsWrapper">
+        {label && (
+          <label className="inputLabel" htmlFor={id}>
+            {label}
+          </label>
+        )}
+        {required && <span className="inputRequired">Required</span>}
+      </div>
       <div id={id} className={selectWrap} onClick={() => this.setSelect()}>
         <div className="Select-option-selected">
           {(selected === '') ? options[0] : selected}
@@ -68,6 +77,7 @@ export default class Select extends Component {
           </div>
         }
       </div>
+      </>
     );
   } 
 }

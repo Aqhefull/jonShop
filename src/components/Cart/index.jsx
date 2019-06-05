@@ -72,7 +72,7 @@ class Cart extends Component {
               <hr/>
               <div className="Cart-actions">
                 <Link to='/cart'><Button value='View Cart'/></Link>
-                <Button color="green" value='Checkout'/>
+                <Link to='/checkout'><Button color="green" value='Checkout'/></Link>
               </div>
             </>
           }

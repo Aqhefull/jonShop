@@ -4,10 +4,19 @@ import classNames from "classnames";
 
 import "./styles.sass";
 
-const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, inputPress, ...attrs }) => {
+const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, inputPress, getInputTarget, ...attrs }) => {
   const [inputValue, setInputValue] = useState(value || '');
+  const [touchedStatus, setTouchedStatus] = useState(false);
+  const [dirty, setDirtyStatus] = useState("");
   const updateInputValue = (e) => {
+    if(attrs.pattern) {
+      const regexp = new RegExp(attrs.pattern, 'g');
+      if (e.target.value !== '' && !regexp.test(e.target.value))
+        return false;
+    }
+    setDirtyStatus('dirty')
     getInputValue(e.target.value);
+    getInputTarget(e.target);
     return setInputValue(e.target.value);
   }
   const handleKeyPress = (e) => {
@@ -15,7 +24,18 @@ const Input = ({ id, className, value, label, error, checkbox, defaultChecked, p
       inputPress()
     }
   }
-  const classes = classNames("input", className, { error });
+  const handleFocusBlur = (e) => {
+    setTouchedStatus(!touchedStatus);
+  }
+
+  const classes = classNames(
+    "input",
+    className,
+    (!touchedStatus && dirty) ? { error } : null,
+    (dirty && !error) ? 'success' : null,
+    touchedStatus ? "touched" : null,
+    { dirty }
+  );
   const isCheckClass = classNames("check__box", (defaultChecked) ? 'checked' : '');
   const inputWrapper = classNames("inputWrapper", (attrs.type === 'checkbox') ? 'inputWrapper__checkbox' : null);
   return (
@@ -36,10 +56,12 @@ const Input = ({ id, className, value, label, error, checkbox, defaultChecked, p
         className={classes}
         onChange={updateInputValue}
         onKeyPress={handleKeyPress}
+        onFocus={handleFocusBlur}
+        onBlur={handleFocusBlur}
         {...attrs}
       />
       {checkbox && <span className={isCheckClass} />}
-      {error && <span className="inputError">{error}</span>}
+      {(!touchedStatus && dirty && error) ? <span className="inputError">{error}</span> : null}
     </div>
   );
 };
@@ -50,7 +72,9 @@ Input.propTypes = {
   label: PropTypes.string,
   error: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  getInputValue: PropTypes.func,
+  getInputTarget: PropTypes.func
 };
 
 Input.defaultProps = {
@@ -58,7 +82,9 @@ Input.defaultProps = {
   label: "",
   error: "",
   value: "",
-  placeholder: ''
+  placeholder: "",
+  getInputValue: () => {},
+  getInputTarget: () => {}
 };
 
 export default Input;

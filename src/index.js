@@ -8,6 +8,7 @@ import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from "connected-react-router";
 import store, { history } from "./store";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 ReactDOM.render((
   <Provider store={store}>
@@ -16,6 +17,7 @@ ReactDOM.render((
           <Route exact path="/" component={Home} />
           <Route path="/product/:id" component={Single} />
           <Route path="/cart" component={Cart} />
+          <Route path="/checkout" component={Checkout} />
           <Route render={() => (<div>Miss</div>)} />
         </Switch>
     </ConnectedRouter>

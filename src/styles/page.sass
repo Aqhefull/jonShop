@@ -18,6 +18,13 @@ hr
   background-color: #e4e4e4
   border: 0
   height: 2px
+.page-title
+  font-size: 50px
+  text-align: center
+  padding: 40px
+  background-color: #f3f3f3
+  margin: 0 0 20px 0
+  width: 100%
 .main-wrapper
   background-color: #544580
 .sidebar
@@ -123,3 +130,62 @@ hr
         margin-right: 10px
         &:last-child
           margin-right: 0
+.checkout
+  margin: 40px auto
+  .form
+    display: flex
+.form
+  &-
+    &row
+      display: flex
+      justify-content: space-between
+      margin: 20px
+    &section
+      &-
+        &title
+          font-weight: 700
+          font-size: 20px
+          display: flex
+          align-items: center
+        &chip
+          color: #000
+          width: 34px
+          margin-right: 10px !important
+          font-size: 12px
+          overflow: auto
+          .chipText
+            margin: 0 auto
+  &--
+    &light
+      .form-section-title, .inputLabel
+        color: #fff
+.checkout-submit
+  justify-content: center
+  .btn
+    width: 100%
+    margin: 0 15px
+    padding: 10px
+.checkout-summary
+  background-color: #fff
+  padding: 20px
+  margin-top: 78px
+.checkout-summary__title
+  justify-self: flex-start
+  flex-grow: 2
+.checkout-summary__product .remove-img
+  margin-right: 10px
+  height: 20px
+.checkout-summary__product
+  display: flex
+  align-items: center
+  min-height: 30px
+  margin-bottom: 10px
+.checkout-summary__total
+  font-weight: 700
+  justify-content: space-between
+  align-items: center
+  display: flex
+.checkout-summary__image
+  width: 100%
+  max-width: 40px
+  height: 100%
