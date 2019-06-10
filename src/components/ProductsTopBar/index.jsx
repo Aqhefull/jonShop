@@ -12,8 +12,7 @@ const ProductsTopBar = ({ switchSortProducts, filteredProducts }) => {
   return (
     <div className="products-top-bar">
       <div className="products-top-bar__sort">
-        <label>Sort by: </label>
-        <Select id="sortBy" onSelectChange={a => switchSortProducts(a)}>
+        <Select id="sortBy" label="Sort by:" onSelectChange={a => switchSortProducts(a)}>
           <SelectOption name="New" />
           <SelectOption name="Price UP" />
           <SelectOption name="Price Down" />
