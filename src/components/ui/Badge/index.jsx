@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import "./styles.sass";
-
 const Badge = ({ value, circle, className, inline, outer, color, ...attrs }) => {
   const text = (typeof value === "string" || value instanceof String) && value !== '';
 

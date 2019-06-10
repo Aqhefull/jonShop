@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './styles.sass';
-
 const Image = ({
   src, alt, className, width, height, circle, imageClick, ...attrs
 }) => {

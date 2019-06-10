@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import PropTypes from "prop-types";
 import classNames from "classnames";
+
+//Etc
 import arrow from './arrow.svg'
 import arrowWhite from "./arrow-white.svg";
-import "./style.sass";
 
 /*
   React Select by Alexander Komarevich

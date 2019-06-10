@@ -1,16 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import ProductItem from "../ProductItem";
-import Button from "./../Button";
-import CartIcon from "../../img/cart.svg";
-import NotCheckIcon from "../../img/off.svg";
 import { Link } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import PropTypes from "prop-types";
 
+//Redux
+import { connect } from "react-redux";
 import { getFilteredProducts, addToCart } from "../../actions/actionCreator";
 
-import "./style.sass";
+//Components
+import ProductItem from "../ProductItem";
+import Button from "./../ui/Button";
+import CartIcon from "../../img/cart.svg";
+import NotCheckIcon from "../../img/off.svg";
 
 const filterList = (productList, filterProducts) => {
   let tempArr = productList;

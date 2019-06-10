@@ -1,8 +1,12 @@
 import React from 'react'
+
+//Redux
 import { connect } from "react-redux";
-import './style.sass'
-import Select, { SelectOption } from '../Select';
 import { switchSortProducts } from "../../actions/actionCreator";
+
+//Components
+import Select, { SelectOption } from "../ui/Select";
+
 
 const ProductsTopBar = ({ switchSortProducts, filteredProducts }) => {
   return (

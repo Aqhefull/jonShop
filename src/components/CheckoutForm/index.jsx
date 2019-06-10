@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+//Redux
 import { connect } from "react-redux";
-import Input from "../Input";
-import Select, { SelectOption } from "../Select";
-import Button from "../Button";
-import Chip from "../Chip";
+
+//Components
+import Input from "../ui/Input";
+import Select, { SelectOption } from "../ui/Select";
+import Button from "../ui/Button";
+import Chip from "../ui/Chip";
 
 class CheckoutForm extends Component {
   state = {

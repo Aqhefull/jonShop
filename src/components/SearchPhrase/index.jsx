@@ -1,8 +1,12 @@
 import React from "react";
+
+//Redux
 import { connect } from "react-redux";
-import Input from "../Input";
 import { history } from "../../store.js";
 import { searchByPhrase } from "../../actions/actionCreator";
+
+//Components
+import Input from "../ui/Input";
 
 const SearchPhrase = ({ searchByPhrase, searchProduct }) => (
   <Input

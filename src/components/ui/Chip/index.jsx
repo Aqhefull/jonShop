@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
+//Components
 import Icon from "../Icon";
 import Image from "../Image";
-
-import "./styles.sass";
 
 const Chip = ({
   text,

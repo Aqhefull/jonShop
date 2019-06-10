@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import "./styles.sass";
-
 const Icon = ({ name, className, size, onClick, disabled, ...attrs }) => {
   const classes = classNames(
     "fa",

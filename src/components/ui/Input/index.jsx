@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import "./styles.sass";
-
 const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, inputPress, getInputTarget, ...attrs }) => {
   const [inputValue, setInputValue] = useState(value || '');
   const [touchedStatus, setTouchedStatus] = useState(false);

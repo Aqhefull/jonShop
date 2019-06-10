@@ -1,11 +1,18 @@
 import React from "react";
-import { connect } from "react-redux";
-import Button from "../components/Button";
-import Image from "../components/Image";
 import { Link } from "react-router-dom";
+
+//Redux
+import { connect } from "react-redux";
 import { addToCart } from "../actions/actionCreator";
-import removeImg from "../img/off.svg";
+
+//Components
 import Wrapper from "../Wrapper";
+import Button from "../components/ui/Button";
+import Image from "../components/ui/Image";
+
+//Etc
+import removeImg from "../img/off.svg";
+
 const CartPage = ({ inCart, items, addToCart }) => {
   const itemsInCart = items.filter(item => inCart.includes(item.id));
   const totalPrice = itemsInCart.reduce((prev, next) => prev + next.price, 0);

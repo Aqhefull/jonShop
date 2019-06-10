@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.sass";
+//Components
 import Cart from "../Cart";
 import SearchPhrase from '../SearchPhrase'
 import Logo from "../Logo";

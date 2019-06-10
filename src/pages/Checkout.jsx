@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Wrapper from "../Wrapper";
+
+//Redux
 import { connect } from "react-redux";
-import CheckoutForm from '../components/CheckoutForm'
-import removeImg from "../img/off.svg";
-import Image from "../components/Image";
 import { addToCart } from "../actions/actionCreator";
+
+//Components
+import Wrapper from "../Wrapper";
+import Image from "../components/ui/Image";
+import CheckoutForm from '../components/CheckoutForm'
+
+//Etc
+import removeImg from "../img/off.svg";
+
+
 
 const itemsInCart = (inCart, filteredProducts) => filteredProducts.filter(item => inCart.includes(item.id));
 

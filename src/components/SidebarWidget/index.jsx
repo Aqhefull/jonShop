@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './style.sass';
-
 const SidebarWidget = ({ title, children }) => (
   <div className="sidebar-widget">
     {title && <h6>{title}</h6>}

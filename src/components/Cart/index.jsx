@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
-import './styles.sass'
+import { Link } from "react-router-dom";
+
+//Redux
 import { connect } from "react-redux";
+import { addToCart } from "../../actions/actionCreator";
+
+//Components
+import Image from "../ui/Image";
+import Button from "../ui/Button";
+
+//Etc
 import CartIcon from './../../img/cart.svg'
 import removeImg from "./../../img/off.svg";
-import Image from '../Image';
-import Button from "../Button";
-import { Link } from "react-router-dom";
-import { addToCart } from "../../actions/actionCreator";
+
 
 class Cart extends Component {
   state = {

@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+
+//Redux
 import { connect } from "react-redux";
+
+//Components
 import SidebarWidget from "../components/SidebarWidget";
 import ListGroup from "../components/ListGroup/ListGroup";
 import ListGroupFilter from "../components/ListGroup/ListGroupFilter";
+
 class Sidebar extends Component {
   state = {};
 

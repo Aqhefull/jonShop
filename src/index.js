@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/main.sass';
+import { Route, Switch } from "react-router-dom";
+import { ConnectedRouter } from "connected-react-router";
+
+//Redux
+import { Provider } from "react-redux";
+import store, { history } from "./store";
+
+//Pages
 import Home from './pages/Home';
 import Single from "./pages/Single";
-import { Provider } from 'react-redux';
-import { Route, Switch } from 'react-router-dom'
-import { ConnectedRouter } from "connected-react-router";
-import store, { history } from "./store";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+
+//Styles
+import "./styles/main.sass";
 
 ReactDOM.render((
   <Provider store={store}>

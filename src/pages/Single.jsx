@@ -1,13 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Wrapper from "../Wrapper";
-import Select, { SelectOption } from "../components/Select";
-import Image from "../components/Image";
-import Badge from "../components/Badge";
-import Chip from "../components/Chip";
-import Button from "../components/Button";
+
+//Redux
+import { connect } from "react-redux";
 import { addToCart } from "../actions/actionCreator";
+
+//Components
+import Wrapper from "../Wrapper";
+import Select, { SelectOption } from "../components/ui/Select";
+import Image from "../components/ui/Image";
+import Badge from "../components/ui/Badge";
+import Chip from "../components/ui/Chip";
+import Button from "../components/ui/Button";
+
+//Etc
 import CartIcon from "../img/cart.svg";
 import NotCheckIcon from "../img/off.svg";
 

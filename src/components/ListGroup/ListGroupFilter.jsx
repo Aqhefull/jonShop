@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+
+//Redux
 import { connect } from 'react-redux'
-import ListGroupItem from "./ListGroupItem";
 import {switchFilter} from '../../actions/actionCreator'
 
-import Badge from "../Badge";
-import Input from "../Input";
-import Chip from "../Chip";
+//Components
+import ListGroupItem from "./ListGroupItem";
+import Badge from "../ui/Badge";
+import Input from "../ui/Input";
+import Chip from "../ui/Chip";
 
 
 

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+
+//Redux
 import { connect } from 'react-redux';
+
+//Components
 import ProductsTopBar from '../components/ProductsTopBar';
 import ProductList from '../components/ProductList';
 
