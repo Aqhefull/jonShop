@@ -7,6 +7,9 @@ body
   box-sizing: border-box
 a
   text-decoration: none !important
+  color: $mainColor
+  &:hover
+    color: $mainColorLight
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   text-transform: uppercase
   font-weight: 700
@@ -14,19 +17,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   margin: 20px 0
 hr
   margin: 20px 0
-  color: #e4e4e4
-  background-color: #e4e4e4
+  color: $lightGray
+  background-color: $lightGray
   border: 0
   height: 2px
 .page-title
   font-size: 50px
   text-align: center
   padding: 40px
-  background-color: #f3f3f3
+  background-color: $accentColorLight
   margin: 0 0 20px 0
   width: 100%
+  color: #fff
 .main-wrapper
-  background-color: #544580
+  background-color: $mainColor
 .sidebar
   background-color: #fff
   padding: 20px
@@ -53,16 +57,16 @@ hr
         &center
           justify-content: center
     &header
-      background-color: #ccc
+      background-color: $lightGray
 .remove-img
-  background-color: #544580
+  background-color: $mainColor
   cursor: pointer
   border-radius: 50%
   padding: 5px
   width: 20px
   margin: 0 20px 0 0
   &:hover
-    background-color: #866bd4
+    background-color: $mainColorLight
 .cart-page
   &__
     &empty
@@ -104,7 +108,7 @@ hr
       font-size: 20px
       font-weight: 900
       font-family: 'Roboto', sans-serif
-      background-color: #544580
+      background-color: $mainColor
       color: #fff
       padding: 10px
       display: inline-block
@@ -118,8 +122,6 @@ hr
       align-items: center
       &:last-child
         padding-bottom: 10px
-      span
-        color: #544580
     &cat
       .chip
         &:last-child

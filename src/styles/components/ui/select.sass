@@ -13,8 +13,8 @@
   position: relative
   &-
     &open
-      border: 2px solid #544580
-      background-color: #544580
+      border: 2px solid $mainColor
+      background-color: $mainColor
       color: #fff
     &indicators
       padding-left: 6px
@@ -22,28 +22,28 @@
       display: none
     &options
       border: 2px solid #000
-      color: #000
+      color: #fff
       width: 100%
       top: 100%
       left: 0
       position: absolute
       margin-top: 5px
-      background-color: #ededed
+      background-color: $accentColorLight
       .Select-option
         padding: 10px 10px 10px 10px
         &:hover
-          background-color: #5e9eca
-          color: #fff
+          background-color: $accentColorDark
+          
     &type
       &-
         &input
           height: 40px
           width: 100%
           padding: 12px
-          border: 1px solid #EBEBEB
+          border: 3px solid $accentColorDark
           border-radius: 0
           .Select-options
             z-index: 999
-            border: 1px solid #EBEBEB
+            border: 3px solid $accentColorDark
         &input.Select-open
-            background-color: #1e88e5
+            background-color: $accentColor

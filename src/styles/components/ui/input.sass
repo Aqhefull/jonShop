@@ -3,7 +3,7 @@
   height: 40px
   width: 100%
   padding: 12px
-  border: 3px solid #EBEBEB
+  border: 3px solid $accentColorDark
 
 
 .input[disabled] 
@@ -15,7 +15,7 @@
   border-color: #D43728
   background-color: rgba(212, 55, 40, 0.2)
 .input.success 
-  border-color: #25b900
+  border-color: $greenLight
   background-color: #fff
   color: #000
 .inputWrapper 
@@ -41,7 +41,7 @@
 
 
 .inputRequired 
-  color: #777
+  color: #fff
 
 
 .inputRequired,
@@ -76,17 +76,17 @@
   background-color: white
   background-repeat: no-repeat
   background-position: 50% 50%
-  box-shadow: 0 0 0 0.1em #4A90E2
+  box-shadow: 0 0 0 0.1em $accentColor
 	
 /* Checked */
 .check__box.checked
-	background-color: #4A90E2;
+	background-color: $accentColor
 	background-image: url(https://cdn.glitch.com/d6162378-5823-4160-a555-3d9789bd2b92%2Fcheck.svg?1550563475518)
 		
 /* Focused */
 
 .check__input:focus + .check__box 
-	box-shadow: 0 0 0 0.1em #4A90E2, 0 0 0 0.2em #7ED321
+	box-shadow: 0 0 0 0.1em $accentColor, 0 0 0 0.2em $green
 		
 /* Disabled */
 

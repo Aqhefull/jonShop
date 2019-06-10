@@ -18,7 +18,7 @@
 .list-group-item 
   position: relative
   list-style-type: none
-  border: 1px solid #EDEDED
+  border: 1px solid $accentColorLight
   display: inline-flex
   padding: 10px 20px
   justify-content: space-between
@@ -26,7 +26,8 @@
   width: 100%
   cursor: pointer
   &:hover
-    background-color: #90caf9
+    background-color: $accentColorDark
+    color: #fff
 
 .list-group-item-text
   flex-grow: 1
@@ -39,7 +40,7 @@
 
 
 .list-group-item.active 
-  background-color: #4392dd
+  background-color: $accentColor
   color: #FFF
 
 
