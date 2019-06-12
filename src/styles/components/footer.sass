@@ -1,5 +1,33 @@
-.Footer
-  min-height: 250px
+.footer
   height: 100%
   width: 100%
   background-color: $accentColor
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  padding: 30px 0
+  &-
+    &social
+      display: flex
+      justify-content: center
+      align-items: center
+      i
+        background-color: #fff
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+        padding: 5px
+        width: 40px
+        height: 40px
+        font-size: 22px
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 10px
+        cursor: pointer
+        &:hover
+          background-color: $accentColorDark
+          color: #fff
+  .copyright
+    color: #fff
+    font-weight: 700
+    padding: 10px 0 0 0
