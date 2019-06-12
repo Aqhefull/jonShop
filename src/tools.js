@@ -14,7 +14,7 @@ export const paginationCalc = (c, m) => {
         l;
 
     for (let i = 1; i <= last; i++) {
-        if (i === 1 || i === last || i >= left && i < right) {
+        if (i === 1 || i === last || (i >= left && i < right)) {
             range.push(i);
         }
     }
