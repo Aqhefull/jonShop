@@ -3,7 +3,8 @@ import {
   SORT_PRODUCT,
   FILTERED_PRODUCTS,
   FILTER_PRODUCT,
-  SEARCH_UPDATE
+  SEARCH_UPDATE,
+  UPDATE_PAGE
 } from "../constants";
 
 export const switchFilter = (name, itemSlug) => ({
@@ -31,4 +32,9 @@ export const addToCart = (id) => ({
 export const searchByPhrase = (searchPhrase) => ({
   type: SEARCH_UPDATE,
   searchPhrase
+});
+
+export const changePage = (page) => ({
+  type: UPDATE_PAGE,
+  page
 });

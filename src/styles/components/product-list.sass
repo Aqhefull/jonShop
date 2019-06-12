@@ -1,8 +1,26 @@
-.product-list
-  display: flex
-  justify-content: flex-start
-  align-items: stretch
-  flex-wrap: wrap
+.product
+  &-
+    &list
+      display: flex
+      justify-content: flex-start
+      align-items: stretch
+      flex-wrap: wrap
+    &pagination
+      display: flex
+      justify-content: center
+      align-items: center
+      li
+        background-color: $mainColorLight
+        margin: 10px
+        &:hover
+          background-color: #000
+        a
+          font-size: 16px
+          padding: 12px
+          display: block
+          color: #fff
+      li.active
+        background-color: $accentColorDark
 .product-not-found
   margin: 20px auto
   display: flex

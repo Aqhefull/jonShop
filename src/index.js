@@ -21,6 +21,7 @@ ReactDOM.render((
     <ConnectedRouter history={history}>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/page/:id" component={Home} />
           <Route path="/product/:id" component={Single} />
           <Route path="/cart" component={Cart} />
           <Route path="/checkout" component={Checkout} />
