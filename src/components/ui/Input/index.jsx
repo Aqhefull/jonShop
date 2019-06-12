@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, inputPress, getInputTarget, ...attrs }) => {
+const Input = ({ id, className, value, label, error, checkbox, defaultChecked, placeholder, getInputValue, inputPress, getInputTarget, disableValid, ...attrs }) => {
   const [inputValue, setInputValue] = useState(value || '');
   const [touchedStatus, setTouchedStatus] = useState(false);
   const [dirty, setDirtyStatus] = useState("");
@@ -12,7 +12,7 @@ const Input = ({ id, className, value, label, error, checkbox, defaultChecked, p
       if (e.target.value !== '' && !regexp.test(e.target.value))
         return false;
     }
-    setDirtyStatus('dirty')
+    if(!disableValid) setDirtyStatus("dirty")
     getInputValue(e.target.value);
     getInputTarget(e.target);
     return setInputValue(e.target.value);
@@ -54,8 +54,8 @@ const Input = ({ id, className, value, label, error, checkbox, defaultChecked, p
         className={classes}
         onChange={updateInputValue}
         onKeyPress={handleKeyPress}
-        onFocus={handleFocusBlur}
-        onBlur={handleFocusBlur}
+        onFocus={!disableValid ? handleFocusBlur : null}
+        onBlur={!disableValid ? handleFocusBlur : null}
         {...attrs}
       />
       {checkbox && <span className={isCheckClass} />}
@@ -70,6 +70,7 @@ Input.propTypes = {
   label: PropTypes.string,
   error: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disableValid: PropTypes.bool,
   placeholder: PropTypes.string,
   getInputValue: PropTypes.func,
   getInputTarget: PropTypes.func
@@ -81,8 +82,10 @@ Input.defaultProps = {
   error: "",
   value: "",
   placeholder: "",
+  disableValid: false,
   getInputValue: () => {},
-  getInputTarget: () => {}
+  getInputTarget: () => {},
+  
 };
 
 export default Input;

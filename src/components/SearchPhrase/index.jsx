@@ -16,6 +16,7 @@ const SearchPhrase = ({ searchByPhrase, searchProduct }) => (
     inputPress={() => history.push('/')}
     value={searchProduct}
     className="nav-search"
+    disableValid={true}
   />
 );
 
