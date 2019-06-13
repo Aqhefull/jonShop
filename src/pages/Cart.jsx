@@ -72,7 +72,7 @@ const CartPage = ({ inCart, items, addToCart }) => {
                 <span>{totalPrice}$</span>
               </div>
             </div>
-            <div className="table-row">
+            <div className="table-row cart-btns">
               <div className="table-col col-md-6">
                 <Link to="/">
                   <Button value="Return to shop" />

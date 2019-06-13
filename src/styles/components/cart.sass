@@ -1,8 +1,12 @@
 .Cart
   background-color: $accentColor
   padding: 20px
+  margin: 20px 0
   display: inline-block
-  float: right
+  width: 100%
+  @media screen and (min-width: 768px)
+    width: auto
+    float: right
   position: relative
   cursor: pointer
   &:hover
@@ -14,12 +18,19 @@
       align-items: center
     &dropdown
       position: absolute
-      right: 0
+      left: 0
+      width: 100%
+      border-bottom: 5px solid $accentColorDark
       top: 100%
       padding: 20px
       background-color: #fff
-      z-index: 999
-      min-width: 400px
+      z-index: 10000
+      @media screen and (min-width: 768px)
+        left: auto
+        margin: 0
+        right: 0
+        min-width: 400px
+        border-bottom: 0
       ul
         overflow-y: scroll
         margin-right: -20px
@@ -57,6 +68,7 @@
       align-items: center
       margin-bottom: 10px
       padding-bottom: 10px
+      padding-right: 15px
       position: relative
       &:after
         content: ''
@@ -78,7 +90,17 @@
           flex-grow: 2
           padding-left: 10px
           color: $accentColor
+          text-overflow: ellipsis
+          overflow: hidden
+          white-space: nowrap
           &:hover
             color: $accentColorLight
         &price
           color: $accentColor
+.cart-btns
+  display: flex
+  flex-direction: column
+  .table-col
+    justify-content: center
+    align-items: center
+    margin: 5px 0

@@ -24,10 +24,10 @@ const SingleProduct = ({ products, match, addToCart, inCart }) => {
   return currentProduct ? (
     <Wrapper>
       <section className="container single-product">
-        <div className="col-md-6 single-product__image">
+        <div className="col-xs-12 col-sm-12 col-md-6 single-product__image">
           <Image src={currentProduct.image} />
         </div>
-        <div className="col-md-6 single-product__content">
+        <div className="col-xs-12 col-sm-12 col-md-6 single-product__content">
           <h1 className="single-product__title">{currentProduct.text}</h1>
           <div className="single-product__price">
             <strong>{currentProduct.price}$</strong>

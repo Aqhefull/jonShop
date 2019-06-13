@@ -39,12 +39,16 @@ hr
 .table
   padding: 20px
   background-color: #fff
-  margin: 20px
+  margin: 20px 0
+  @media screen and (min-width: 768px)
+    margin: 20px
   &-
     &row
       width: 100%
       display: flex
-      flex-wrap: wrap
+      flex-wrap: nowrap
+      @media screen and (min-width: 768px)
+        flex-wrap: wrap
       padding: 10px 0
     &col
       display: flex
@@ -64,7 +68,9 @@ hr
   border-radius: 50%
   padding: 5px
   width: 20px
-  margin: 0 20px 0 0
+  margin: 0 5px 0 0
+  @media screen and (min-width: 768px)
+    margin: 0 20px 0 0
   &:hover
     background-color: $mainColorLight
 .cart-page
@@ -85,6 +91,7 @@ hr
 .single-product
   padding: 40px 0
   display: flex
+  flex-wrap: wrap
   &:after
     content: ""
     display: table
@@ -132,10 +139,6 @@ hr
         margin-right: 10px
         &:last-child
           margin-right: 0
-.checkout
-  margin: 40px auto
-  .form
-    display: flex
 .form
   &-
     &row
@@ -161,33 +164,55 @@ hr
     &light
       .form-section-title, .inputLabel
         color: #fff
-.checkout-submit
-  justify-content: center
-  .btn
-    width: 100%
-    margin: 0 15px
-    padding: 10px
-.checkout-summary
-  background-color: #fff
-  padding: 20px
-  margin-top: 78px
-.checkout-summary__title
-  justify-self: flex-start
-  flex-grow: 2
-.checkout-summary__product .remove-img
-  margin-right: 10px
-  height: 20px
-.checkout-summary__product
-  display: flex
-  align-items: center
-  min-height: 30px
-  margin-bottom: 10px
-.checkout-summary__total
-  font-weight: 700
-  justify-content: space-between
-  align-items: center
-  display: flex
-.checkout-summary__image
-  width: 100%
-  max-width: 40px
-  height: 100%
+.checkout
+  margin: 40px auto
+  .form
+    display: flex
+    @media screen and (max-width: 768px)
+      flex-direction: column-reverse
+  &-
+    &submit
+      justify-content: center
+      .btn
+        width: 100%
+        margin: 0 15px
+        padding: 10px
+    &summary
+      background-color: #fff
+      padding: 20px
+      margin-bottom: 50px
+      @media screen and (min-width: 768px)
+        margin-top: 78px
+        margin-bottom: 0
+      &__
+        &title
+          justify-self: flex-start
+          flex-grow: 2
+          text-overflow: ellipsis
+          overflow: hidden
+          white-space: nowrap
+        &price
+          padding-left: 10px
+        &product 
+          .remove-img
+            margin-right: 10px
+            height: 20px
+        &product
+          display: flex
+          align-items: center
+          min-height: 30px
+          margin-bottom: 10px
+        &total
+          font-weight: 700
+          justify-content: space-between
+          align-items: center
+          display: flex
+        &image
+          width: 100%
+          max-width: 40px
+          height: 100%
+    &form
+      @media screen and (max-width: 768px)
+        .form-row
+          margin: 20px 0
+          align-items: flex-end
