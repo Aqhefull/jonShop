@@ -2,7 +2,6 @@ import { createHashHistory } from "history";
 import { createStore, compose, applyMiddleware } from 'redux';
 import { routerMiddleware } from "connected-react-router";
 import createRootReducer from "./reducers";
-import { save } from 'redux-localstorage-simple'
 
 export const history = createHashHistory({
   hashType: 'slash'
@@ -21,7 +20,7 @@ const configureStore = preloadedState => (
     createRootReducer(history),
     preloadedState,
     composeEnhancers(
-      applyMiddleware(save({ namespace: 'todo-list' }), routerMiddleware(history))
+      applyMiddleware(routerMiddleware(history))
     ),
   )
 );

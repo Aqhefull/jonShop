@@ -1,0 +1,17 @@
+{
+  "main.css": "/jonShop/static/css/main.f98f6c81.chunk.css",
+  "main.js": "/jonShop/static/js/main.8dc1d329.chunk.js",
+  "main.js.map": "/jonShop/static/js/main.8dc1d329.chunk.js.map",
+  "runtime~main.js": "/jonShop/static/js/runtime~main.3ef45f09.js",
+  "runtime~main.js.map": "/jonShop/static/js/runtime~main.3ef45f09.js.map",
+  "static/js/2.aab0d9e6.chunk.js": "/jonShop/static/js/2.aab0d9e6.chunk.js",
+  "static/js/2.aab0d9e6.chunk.js.map": "/jonShop/static/js/2.aab0d9e6.chunk.js.map",
+  "index.html": "/jonShop/index.html",
+  "precache-manifest.676da7c0895b022d6d2de250c9202ec4.js": "/jonShop/precache-manifest.676da7c0895b022d6d2de250c9202ec4.js",
+  "service-worker.js": "/jonShop/service-worker.js",
+  "static/css/main.f98f6c81.chunk.css.map": "/jonShop/static/css/main.f98f6c81.chunk.css.map",
+  "static/media/arrow-white.svg": "/jonShop/static/media/arrow-white.3f5ae1c1.svg",
+  "static/media/arrow.svg": "/jonShop/static/media/arrow.803c6c03.svg",
+  "static/media/cart.svg": "/jonShop/static/media/cart.2a3c912b.svg",
+  "static/media/off.svg": "/jonShop/static/media/off.74c862f6.svg"
+}
