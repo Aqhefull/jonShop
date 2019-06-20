@@ -8,31 +8,31 @@ self.__precacheManifest = [
     "url": "/jonShop/static/media/cart.2a3c912b.svg"
   },
   {
-    "revision": "803c6c03da9224c8f2362aca5efeb48c",
-    "url": "/jonShop/static/media/arrow.803c6c03.svg"
+    "revision": "5ea5f34938342baaf900bcf7a53ee7cc",
+    "url": "/jonShop/static/media/arrow.5ea5f349.svg"
   },
   {
-    "revision": "3f5ae1c1e0d9c9527dd0c3b0ff97f5d4",
-    "url": "/jonShop/static/media/arrow-white.3f5ae1c1.svg"
+    "revision": "593b1939e589dc986fbeac29200f52db",
+    "url": "/jonShop/static/media/arrow-white.593b1939.svg"
   },
   {
     "revision": "6f2ee63ffd4a7336397a",
     "url": "/jonShop/static/js/runtime~main.3ef45f09.js"
   },
   {
-    "revision": "ca0f2c4b04ad1e24ff67",
-    "url": "/jonShop/static/js/main.8dc1d329.chunk.js"
+    "revision": "b044e63e2c4a6dd2f822",
+    "url": "/jonShop/static/js/main.27d4b965.chunk.js"
   },
   {
     "revision": "c63739cc5e736b9217cc",
     "url": "/jonShop/static/js/2.aab0d9e6.chunk.js"
   },
   {
-    "revision": "ca0f2c4b04ad1e24ff67",
-    "url": "/jonShop/static/css/main.f98f6c81.chunk.css"
+    "revision": "b044e63e2c4a6dd2f822",
+    "url": "/jonShop/static/css/main.cb5c6c7d.chunk.css"
   },
   {
-    "revision": "1044d5b20c55aeec8710129dbb70abb4",
+    "revision": "5934d8ae184c592e0657f8f1ad22628c",
     "url": "/jonShop/index.html"
   }
 ];
