@@ -1,5 +1,5 @@
 {
-  "main.css": "/jonShop/static/css/main.cb5c6c7d.chunk.css",
+  "main.css": "/jonShop/static/css/main.cc1d37cf.chunk.css",
   "main.js": "/jonShop/static/js/main.27d4b965.chunk.js",
   "main.js.map": "/jonShop/static/js/main.27d4b965.chunk.js.map",
   "runtime~main.js": "/jonShop/static/js/runtime~main.3ef45f09.js",
@@ -7,9 +7,9 @@
   "static/js/2.aab0d9e6.chunk.js": "/jonShop/static/js/2.aab0d9e6.chunk.js",
   "static/js/2.aab0d9e6.chunk.js.map": "/jonShop/static/js/2.aab0d9e6.chunk.js.map",
   "index.html": "/jonShop/index.html",
-  "precache-manifest.1e92b88cc397289cafca7f94224879f1.js": "/jonShop/precache-manifest.1e92b88cc397289cafca7f94224879f1.js",
+  "precache-manifest.5df1e442c487ff86d1a90ba6add6033d.js": "/jonShop/precache-manifest.5df1e442c487ff86d1a90ba6add6033d.js",
   "service-worker.js": "/jonShop/service-worker.js",
-  "static/css/main.cb5c6c7d.chunk.css.map": "/jonShop/static/css/main.cb5c6c7d.chunk.css.map",
+  "static/css/main.cc1d37cf.chunk.css.map": "/jonShop/static/css/main.cc1d37cf.chunk.css.map",
   "static/media/arrow-white.svg": "/jonShop/static/media/arrow-white.593b1939.svg",
   "static/media/arrow.svg": "/jonShop/static/media/arrow.5ea5f349.svg",
   "static/media/cart.svg": "/jonShop/static/media/cart.2a3c912b.svg",
