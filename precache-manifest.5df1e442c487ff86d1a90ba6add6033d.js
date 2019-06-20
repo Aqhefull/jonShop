@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/jonShop/static/js/runtime~main.3ef45f09.js"
   },
   {
-    "revision": "b044e63e2c4a6dd2f822",
+    "revision": "1e5e8f6d31eeed488e6a",
     "url": "/jonShop/static/js/main.27d4b965.chunk.js"
   },
   {
@@ -28,11 +28,11 @@ self.__precacheManifest = [
     "url": "/jonShop/static/js/2.aab0d9e6.chunk.js"
   },
   {
-    "revision": "b044e63e2c4a6dd2f822",
-    "url": "/jonShop/static/css/main.cb5c6c7d.chunk.css"
+    "revision": "1e5e8f6d31eeed488e6a",
+    "url": "/jonShop/static/css/main.cc1d37cf.chunk.css"
   },
   {
-    "revision": "5934d8ae184c592e0657f8f1ad22628c",
+    "revision": "287ab2b4ffc9640d27dccaa489f89a4a",
     "url": "/jonShop/index.html"
   }
 ];
